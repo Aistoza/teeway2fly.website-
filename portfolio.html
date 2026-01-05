@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>TeeWay2Fly Portfolio</title>
+
     <style>
         /* RESET */
         * {
@@ -105,18 +106,9 @@
         .lightbox img {
             max-width: 90%;
             max-height: 90%;
-            transform: scale(0.8);
-            animation: zoomIn 0.4s ease forwards;
             border-radius: 10px;
         }
 
-        @keyframes zoomIn {
-            to {
-                transform: scale(1);
-            }
-        }
-
-        /* CLOSE BUTTON */
         .close {
             position: absolute;
             top: 20px;
@@ -127,16 +119,15 @@
             font-weight: bold;
         }
 
-        /* FOOTER */
         footer {
             text-align: center;
             padding: 20px;
             background: #111;
             color: white;
         }
-
     </style>
 </head>
+
 <body>
 
 <header>
@@ -161,17 +152,16 @@
 </section>
 
 <section class="gallery">
-    <img src="images/marshallst_edited.jpg" alt="Photo 1">
-    <img src="images/redroom2_edited.jpg" alt="Photo 2">
-    <img src="images/whitefit.jpg" alt="Photo 3">
-    <img src="images/green photo. jpg.jpg" alt="Photo 4">
-    <!-- Add more images as needed -->
+    <img src="images/marshallst_edited.jpg" alt="Marshall Street">
+    <img src="images/redroom2_edited.jpg" alt="Red Room">
+    <img src="images/whitefit.jpg" alt="White Outfit">
+    <img src="images/green5_edited.jpg" alt="Green Outfit">
+    
 </section>
 
-<!-- LIGHTBOX -->
 <div class="lightbox">
     <span class="close">&times;</span>
-    <img src="" alt="Popup Image">
+    <img src="" alt="Expanded Image">
 </div>
 
 <footer>
@@ -179,13 +169,12 @@
 </footer>
 
 <script>
-    // LIGHTBOX JS
-    const galleryImages = document.querySelectorAll('.gallery img');
+    const images = document.querySelectorAll('.gallery img');
     const lightbox = document.querySelector('.lightbox');
     const lightboxImg = document.querySelector('.lightbox img');
     const closeBtn = document.querySelector('.close');
 
-    galleryImages.forEach(img => {
+    images.forEach(img => {
         img.addEventListener('click', () => {
             lightbox.classList.add('active');
             lightboxImg.src = img.src;
@@ -197,7 +186,7 @@
     });
 
     lightbox.addEventListener('click', (e) => {
-        if(e.target !== lightboxImg && e.target !== closeBtn){
+        if (e.target !== lightboxImg && e.target !== closeBtn) {
             lightbox.classList.remove('active');
         }
     });
@@ -205,6 +194,7 @@
 
 </body>
 </html>
+
 
 
 
